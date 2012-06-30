@@ -14,7 +14,7 @@ WriteMakefile(
       (ABSTRACT_FROM  => 'lib/Win32/Unicode/InternetShortcut.pm', # retrieve abstract from module
        AUTHOR         => 'Jean-Damien Durand <jeandamiendurand@free.fr>') : ()),
     LIBS              => [''], # e.g., '-lm'
-    DEFINE            => '', # e.g., '-DHAVE_SOMETHING'
+    DEFINE            => '-D_CRT_SECURE_NO_WARNINGS', # e.g., '-DHAVE_SOMETHING'
     INC               => '-I.', # e.g., '-I. -I/usr/include/other'
 	# Un-comment this if you add C files to link with later:
     # OBJECT            => '$(O_FILES)', # link all the C files too

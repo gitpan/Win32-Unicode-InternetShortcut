@@ -30,7 +30,7 @@ our @EXPORT = qw(
                     COINIT_SPEED_OVER_MEMORY
 );
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 our $CROAK_ON_ERROR = 0;
 our $utf16le = find_encoding('UTF-16LE') ||
     croak "Failed to load UTF16-LE encoding\n";
@@ -338,7 +338,7 @@ Unless your application has already initialized the COM layer, via Win32::OLE or
 
 =item Win32::Unicode::InternetShortcut->CoInitializeEx(COINIT_CONSTANT[, CROAK_ON_FAILURE])
 
-You can have fine-grained granularity on the threading model, using CoInitializeEx. The COINIT_CONSTANT must be of one COINIT_APARTMENTTHREADED, COINIT_MULTITHREADED, COINIT_DISABLE_OLE1DDE or COINIT_SPEED_OVER_MEMORY. Apparently, COINIT_APARTMENTTHREADED is required to get the interface working.
+You can have fine-grained granularity on the threading model, using CoInitializeEx. The COINIT_CONSTANT must be of one COINIT_APARTMENTTHREADED, COINIT_MULTITHREADED, COINIT_DISABLE_OLE1DDE or COINIT_SPEED_OVER_MEMORY. Apparently, COINIT_APARTMENTTHREADED is required to get the interface working in a multi-threaded environment.
 
 =back
 

@@ -1,6 +1,9 @@
 #ifndef INTERNETSHORTCUT_H
 #define INTERNETSHORTCUT_H
 
+#ifdef WIN32
+#define swprintf _snwprintf
+#endif
 #define PERL_NO_GET_CONTEXT     /* we want efficiency */
 #define COBJMACROS
 #define WIN32_LEAN_AND_MEAN	/* Tell windows.h to skip much */

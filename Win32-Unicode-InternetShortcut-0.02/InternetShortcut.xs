@@ -350,17 +350,10 @@ _write_ini_filetime(wpath, wini_key, hash, hash_key_e, croak_on_error)
         tmpLowBuf[1]  = (filetime.dwLowDateTime / 256 / 256) % 256;
         tmpLowBuf[0]  = (filetime.dwLowDateTime / 256 / 256 / 256) % 256;
 
-#ifdef __MINGW32__
-        swprintf(szTimeBuf, L"%02X%02X%02X%02X%02X%02X%02X%02X",
-                 tmpLowBuf[3],  tmpLowBuf[2],  tmpLowBuf[1],  tmpLowBuf[0],
-                 tmpHighBuf[3], tmpHighBuf[2], tmpHighBuf[1], tmpHighBuf[0]
-                 );
-#else
         swprintf(szTimeBuf, sizeof(szTimeBuf), L"%02X%02X%02X%02X%02X%02X%02X%02X",
                  tmpLowBuf[3],  tmpLowBuf[2],  tmpLowBuf[1],  tmpLowBuf[0],
                  tmpHighBuf[3], tmpHighBuf[2], tmpHighBuf[1], tmpHighBuf[0]
                  );
-#endif
 
         dres = WritePrivateProfileStringW(
                                           L"InternetShortcut",
